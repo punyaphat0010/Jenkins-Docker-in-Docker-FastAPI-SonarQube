@@ -102,8 +102,8 @@ pipeline {
                 -Dsonar.host.url="$SONAR_HOST_URL" \
                 -Dsonar.login="$SONAR_TOKEN" \
                 -Dsonar.projectBaseDir="$PWD" \
-                -Dsonar.projectKey=test1 \
-                -Dsonar.projectName="test1" \
+                -Dsonar.projectKey=test3 \
+                -Dsonar.projectName="test3" \
                 -Dsonar.sources=app \
                 -Dsonar.tests=tests \
                 -Dsonar.python.version=3.11 \
