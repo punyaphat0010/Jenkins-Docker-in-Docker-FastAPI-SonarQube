@@ -25,7 +25,7 @@ pipeline {
           java -version || true
 
           # ---- Install SonarScanner CLI (fallback หลายชื่อไฟล์ กัน 404) ----
-
+          SCAN_VER=7.2.0.5079
           BASE_URL="https://binaries.sonarsource.com/Distribution/sonar-scanner-cli"
 
           CANDIDATES="
