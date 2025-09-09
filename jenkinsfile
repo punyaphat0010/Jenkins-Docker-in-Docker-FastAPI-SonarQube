@@ -100,7 +100,7 @@ pipeline {
               # ถ้ามีไฟล์ sonar-project.properties จะถูกใช้โดยอัตโนมัติ
               sonar-scanner \
                 -Dsonar.host.url="$SONAR_HOST_URL" \
-                -Dsonar.token=sqp_fffae0fd28bfa3e761e151cae0a9ef5e33fb2982 \
+                -Dsonar.login="$SONAR_TOKEN" \
                 -Dsonar.projectBaseDir="$PWD" \
                 -Dsonar.projectKey=test1 \
                 -Dsonar.projectName="test1" \
