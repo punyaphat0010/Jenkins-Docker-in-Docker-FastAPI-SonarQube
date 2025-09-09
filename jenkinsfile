@@ -92,7 +92,7 @@ pipeline {
 
     stage('SonarQube Analysis') {
       steps {
-        withSonarQubeEnv('SonarQubeScanner-7.2.0.5079') {
+        withSonarQubeEnv('SonarQube-v25.8.0.112029') {
           withCredentials([string(credentialsId: 'SonarQubeToken', variable: 'SONAR_TOKEN')]) {
             sh '''
               set -eux
