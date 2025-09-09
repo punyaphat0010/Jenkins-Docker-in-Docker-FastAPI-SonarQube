@@ -60,7 +60,7 @@ pipeline {
 
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/Navaphon001/Learning_FastAPI_with_Jenkins'
+        git branch: 'main', url: 'https://github.com/punyaphat0010/Jenkins-Docker-in-Docker-FastAPI-SonarQube.git'
       }
     }
 
@@ -92,8 +92,8 @@ pipeline {
 
     stage('SonarQube Analysis') {
       steps {
-        withSonarQubeEnv('SonarQube') {
-          withCredentials([string(credentialsId: 'FastApi', variable: 'SONAR_TOKEN')]) {
+        withSonarQubeEnv('SonarQubeScanner-7.2.0.5079') {
+          withCredentials([string(credentialsId: 'SonarQubeToken', variable: 'SONAR_TOKEN')]) {
             sh '''
               set -eux
               # รันสแกนเนอร์จากใน agent (เห็นไฟล์แน่นอน)
@@ -102,8 +102,8 @@ pipeline {
                 -Dsonar.host.url="$SONAR_HOST_URL" \
                 -Dsonar.login="$SONAR_TOKEN" \
                 -Dsonar.projectBaseDir="$PWD" \
-                -Dsonar.projectKey=TestFastApi \
-                -Dsonar.projectName="TestFastApi" \
+                -Dsonar.projectKey=test1 \
+                -Dsonar.projectName="test1" \
                 -Dsonar.sources=app \
                 -Dsonar.tests=tests \
                 -Dsonar.python.version=3.11 \
